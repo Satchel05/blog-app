@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { useState } from "react";
+import AddNewBlogButton from "./components/AddNewBlogButton";
+import BlogInputForm from "./components/BlogInputForm";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  const [blogList, setBlogList] = useState([]);
+
+  return(
+      <div className="blogInputsContainer">
+        <AddNewBlogButton className="AddNewBlogButton" blogList={blogList} setBlogList={setBlogList}/>
+        <BlogInputForm className="BlogInputForm"/>
+      </div>
+  )
 }
 
 export default App;
