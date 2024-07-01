@@ -1,8 +1,12 @@
-export default function BlogPosts({ blogTitle, blogBody }) {
+export default function BlogPosts({ blogList }) {
     return (
-        <div>
-            <h4>{blogTitle}</h4>
-            <p>{blogBody}</p>
-        </div>
+        blogList.map((blog) => {
+            return (
+                <div>
+                    <h4>{blog.title}</h4>
+                    <p>{blog.body}</p>
+                </div>
+            )
+        })
     )
 }

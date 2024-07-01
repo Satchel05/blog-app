@@ -12,9 +12,16 @@ function App() {
   return(
       <div className="blogInputsContainer">
           {/*This prop list is way too long*/}
-          <BlogInputForm className="BlogInputForm" blogTitle={blogTitle} setBlogTitle={setBlogTitle} blogBody={blogBody} setBlogBody={setBlogBody}/>
-          <AddNewBlogButton className="AddNewBlogButton" blogList={blogList} setBlogList={setBlogList}/>
-          <BlogPosts className="BlogPosts" blogTitle={blogTitle} setBlogTitle={setBlogTitle} blogBody={blogBody} setBlogBody={setBlogBody}/>
+          <BlogInputForm className="BlogInputForm"
+                         setBlogTitle={setBlogTitle}
+                         setBlogBody={setBlogBody}/>
+          <AddNewBlogButton className="AddNewBlogButton"
+                            blogList={blogList}
+                            setBlogList={setBlogList}
+                            blogTitle={blogTitle}
+                            blogBody={blogBody}/>
+          <BlogPosts className="BlogPosts"
+                     blogList={blogList}/>
       </div>
   )
 }
