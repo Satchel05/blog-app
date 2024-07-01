@@ -1,8 +1,16 @@
-export default function BlogInputForm() {
+export default function BlogInputForm({ setBlogTitle, setBlogBody}) {
+
     return (
-        <label>
-            Write your blog post:
-            <textarea name="postContent" rows={8} columns={50}/>
-        </label>
+        <div>
+            <label>
+                Post Title:
+                <input onChange={(e) => { return setBlogTitle(e.target.value); }}></input>
+            </label>
+            <label>
+                Write your blog post:
+                {/*Do I need e.target.value when I have useState?*/}
+                <textarea onChange={(e) => { return setBlogBody(e.target.value) }} name="postContent" rows={10} cols={50}/>
+            </label>
+        </div>
     )
 }

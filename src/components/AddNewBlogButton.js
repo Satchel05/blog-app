@@ -1,13 +1,15 @@
 import { useState } from "react";
 import BlogInputForm from "./BlogInputForm";
 
-export default function AddNewBlogButton({blogList, setBlogList}) {
+// FIXME
+export default function AddNewBlogButton({blogList, setBlogList, blogTitle, blogBody}) {
 
-    function createNewPost() {
-        return <BlogInputForm />
+    function updateBlogList() {
+        // Insert values for title and body here from state onChange variables
+        return setBlogList([...blogList, {title: {}, body: {}}])
     }
 
     return (
-        <button onClick={createNewPost}>Create blog post</button>
+        <button onClick={updateBlogList}>Create blog post</button>
     )
 }
